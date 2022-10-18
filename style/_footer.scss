@@ -1,0 +1,176 @@
+@import 'mixin/mixin';
+
+.footer {
+	overflow: hidden;
+	background: #030a1d;
+	backdrop-filter: blur(50px);
+
+	.footer__wrapper {
+		display: flex;
+		column-gap: 130px;
+		.footer__inner {
+			margin-top: 47px;
+
+			.footer__logo {
+				margin-bottom: 30px;
+			}
+
+			.footer__text {
+				width: 346px;
+				margin-bottom: 27.5px;
+				@include font-graphil(18px, #2b4079, 400, 23px);
+			}
+
+			.footer__element::before {
+				display: block;
+				content: '';
+				width: 340px;
+				height: 0px;
+				border: 1px solid #06112f;
+			}
+
+			.footer__text--special {
+				margin-top: 32.5px;
+				@include font-graphil(15px, $color-primary, 700, 20px);
+			}
+
+			.form__inner {
+				display: flex;
+				.search-form {
+					position: relative;
+					top: 60px;
+					left: 28.7%;
+					width: 200px;
+					height: 45px;
+					border-radius: 20px;
+					background: #06112f;
+					backdrop-filter: blur(50px);
+					border-radius: 10px;
+					box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+					transform: translate(-50%, -50%);
+					transition: all 0.3s ease;
+				}
+
+				.search-input {
+					position: absolute;
+					top: 12px;
+					left: 10px;
+					font-size: 14px;
+					background: none;
+					color: #2b4079;
+					width: 505px;
+					height: 20px;
+					border: none;
+					appearance: none;
+					outline: none;
+
+					&::placeholder {
+						color: #2b4079;
+					}
+
+					&::-webkit-search-cancel-button {
+						appearance: none;
+					}
+				}
+
+				.btn__subscribe {
+					margin-top: 38px;
+					@include flex(flex, center, false, center);
+					@include font-graphil(16px, $color-primary, 700, 21);
+					width: 133px;
+					height: 45px;
+					background: radial-gradient(
+							100% 100% at 100% 0%,
+							#0047ff 0%,
+							#3b4cee 38.33%,
+							#0788ff 63.02%,
+							#005aff 100%
+						),
+						#06112f;
+					backdrop-filter: blur(50px);
+					border-radius: 10px;
+					transition: 0.5s;
+					&:hover {
+						transition: 0.5s;
+						cursor: pointer;
+						color: gray;
+					}	
+				}
+			}
+
+			.footer__text--primary {
+				@include font-graphil(14px, #2b4079, 400, 18px);
+				margin-top: 14px;
+			}
+		}
+
+		.footer-links {
+			@include font-graphil(18px, #2b4079, 400, 23px);
+			.footer__title {
+				@include font-graphil-2(24px, $color-primary, 600, 30px);
+				margin-top: 47px;
+				margin-bottom: 38px;
+			}
+			.footer-about__wrapper {
+				display: flex;
+				margin-bottom: 28px;
+				column-gap: 18px;
+				.footer-about {
+					.footer-about__text {
+						margin-bottom: 9.5px;
+						@include font-graphil-3(16px, $color-primary, 700, 19px);
+					}
+
+					.footer-about__text--special {
+						@include font-graphil-3(12px, #827d9d, 400, 14px);
+					}
+
+					.footer-about__text--secondary {
+						margin-top: 10px;
+						@include font-graphil-3(12px, false, 600, 14px);
+						background: radial-gradient(
+								100% 100% at 100% 0%,
+								#0047ff 0%,
+								#3b4cee 38.33%,
+								#0788ff 63.02%,
+								#005aff 100%
+							),
+							#827d9d;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+						background-clip: text;
+						text-fill-color: transparent;
+					}
+				}
+			}
+
+			.footer-link__text {
+				margin-bottom: 15px;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	.footer__line::before {
+		display: block;
+		content: '';
+		width: 1280px;
+		height: 0px;
+		margin-top: 16px;
+		border: 1px solid #06112f;
+	}
+
+	.about-company {
+		@include flex(flex, false, false, center);
+		margin-top: 31px;
+		margin-bottom: 32px;
+		column-gap: 29px;
+		@include font-graphil(18px, #2b4079, 400, 23px);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

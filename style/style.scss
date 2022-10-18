@@ -1,0 +1,30 @@
+@import 'header';
+@import 'main';
+@import 'footer';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto&display=swap');
+@import url('http://fonts.cdnfonts.com/css/clash-display');
+.container {
+	width: 82%;
+	margin: 0 auto;
+	padding: 15px;
+
+	@media (max-width: 1200px) {
+		width: 86%;
+	}
+	@media (max-width: 992px) {
+		width: 90%;
+	}
+
+	@media (max-width: 768px) {
+		width: 95%;
+	}
+
+	@media (max-width: 480px) {
+		width: 97%;
+	}
+
+	@media (max-width: 320px) {
+		width: 80%;
+	}
+}
+

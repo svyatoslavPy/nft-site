@@ -1,0 +1,401 @@
+@import 'mixin/mixin';
+
+.main {
+	background: #010613;
+	overflow: hidden;
+
+	.about-nft__wrapper {
+		display: flex;
+		column-gap: 270px;
+
+		@media (max-width: 1200px) {
+			display: flex;
+			flex-direction: column;
+			column-gap: 0px;
+		}
+
+		.about-nft {
+			&__text {
+				width: 160%;
+				margin-top: 131px;
+				margin-bottom: 30px;
+				@include font-graphil-2(42px, $color-primary, 600, 52px);
+			}
+
+			&__text--special {
+				width: 150%;
+				margin-bottom: 49px;
+				@include font-graphil(18px, $color-primary, 400, 23px);
+			}
+
+			.btn__wrapper {
+				display: flex;
+				column-gap: 20px;
+
+				.btn {
+					@include flex(flex, center, false, center);
+					@include font-graphil(18px, $color-primary, 700, 23px);
+					width: 167px;
+					height: 51px;
+					transition: 1s;
+					background: radial-gradient(
+							100% 100% at 100% 0%,
+							#0047ff 0%,
+							#3b4cee 38.33%,
+							#0788ff 63.02%,
+							#005aff 100%
+						),
+						#c4c4c4;
+					border-radius: 10px;
+
+					&:hover {
+						cursor: pointer;
+						transition: 1s;
+						color: gray;
+					}
+				}
+
+				.btn__primary {
+					@include flex(flex, center, false, center);
+					@include font-graphil(18px, #101d3e, 700, 23px);
+					width: 146px;
+					height: 51px;
+					border: 1px solid #101d3e;
+					border-radius: 10px;
+					transition: 1s;
+					&:hover {
+						cursor: pointer;
+						transition: 1s;
+						color: white
+					}
+				}
+			}
+		}
+	}
+
+	.about-card__title {
+		@include font-graphil(24px, $color-primary, 700, 31px);
+		margin-bottom: 44px;
+	}
+
+	.card__wrapper {
+		display: flex;
+		column-gap: 25.86px;
+
+		@media (max-width: 1200px) {
+			flex-wrap: wrap;
+		}
+
+		.card {
+			@include flex(flex, false, column, false);
+
+
+			@media (max-width: 1200px) {
+				margin-bottom: 15px;
+			}
+
+			&__items {
+				width: 300.61px;
+				height: 183.32px;
+				border-radius: 19.3939px;
+				background: #030a1d;
+
+				.card-texts__special {
+					display: flex;
+					column-gap: 45px;
+				}
+
+				.card-texts__secondary {
+					display: flex;
+					column-gap: 50px;
+				}
+
+				.card-texts__primary {
+					display: flex;
+					column-gap: 10px;
+				}
+
+				.card-texts__wrapper {
+					display: flex;
+
+					.card__texts {
+						margin-top: 25.86px;
+						padding: 0px 0px 0px 24.57px;
+
+						.card__text--primary {
+							@include font-graphil(12.9293px, #00a2fd, 400, 17px);
+							margin-bottom: 8.62px;
+						}
+
+						.card__text {
+							@include font-graphil(17.2391px, $color-primary, 500, 22px);
+						}
+
+						.card__text--special {
+							@include flex(flex, flex-end, false, false);
+							margin-bottom: 8.62px;
+							@include font-graphil(12.9293px, #2b4079, 400, 17px);
+						}
+					}
+				}
+
+				.card__element::before,
+				.card__element--primary::before {
+					display: block;
+					content: '';
+					margin-top: 17.24px;
+					margin-left: 28.28px;
+					border: 1.07744px solid #071129;
+				}
+
+				.card__element::before {
+					width: 244.04px;
+				}
+
+				.card__element--primary::before {
+					width: 250.04px;
+				}
+
+				.card__texts--secondary {
+					display: flex;
+					column-gap: 118px;
+					margin-top: 25.86px;
+					padding: 0px 0px 0px 24.57px;
+
+					.card__text {
+						@include font-graphil(17.2391px, $color-primary, 500, 22px);
+					}
+
+					.card__text--special {
+						margin-bottom: 8.62px;
+						@include font-graphil(12.9293px, #2b4079, 400, 17px);
+					}
+				}
+			}
+		}
+	}
+
+	.btn__wrapper--primary {
+		@include flex(flex, center, false, center);
+		margin: 0px 0px 0px 30px;
+
+		.btn {
+			@include flex(flex, center, false, center);
+			@include font-graphil-3(14px, #2b4079, 400, 16px);
+			margin-top: 40px;
+			width: 120px;
+			height: 40px;
+			background: #030a1d;
+			border-radius: 53px;
+			transition: 0.5s;
+			cursor: pointer;
+			&:hover {
+				transition: 1s;
+				color: white;
+			}
+		}
+	}
+
+	.info-title {
+		margin-top: 130px;
+		margin-bottom: 38px;
+		@include flex(flex, false, false, center);
+
+		&__text {
+			display: flex;
+			column-gap: 15px;
+			@include font-graphil(24px, $color-primary, 700, 31px);
+
+			span {
+				@include font-graphil(24px, $color-primary, 700, 31px);
+				margin-right: 16px;
+				background: radial-gradient(
+						100% 100% at 100% 0%,
+						#0047ff 0%,
+						#3b4cee 38.33%,
+						#0788ff 63.02%,
+						#005aff 100%
+					),
+					#ffffff;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+		}
+	}
+
+	.seller__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 60px;
+		width: 110%;
+
+		.seller__items {
+			width: 211px;
+			height: 64px;
+			margin-bottom: 25px;
+			@include flex(flex, false, false, center);
+			column-gap: 22px;
+
+			.seller__info--special {
+				margin-left: 5px;
+			}
+
+			.seller__info {
+				.seller__text {
+					@include font-graphil-3(16px, $color-primary, 400, 19px);
+					margin-bottom: 4px;
+				}
+
+				.seller__text--special {
+					@include font-graphil-3(12px, #827d9d, 400, 14px);
+				}
+			}
+
+			.seller__number {
+				@include font-graphil-2(42px, #101a34, 600, 52px);
+			}
+		}
+	}
+
+	.about-card__title--primary {
+		@include flex(flex, space-between, false, center);
+		margin-top: 50px;
+		margin-bottom: 44px;
+
+		.about-text--primary {
+			@include font-graphil(24px, $color-primary, 700, 31px);
+		}
+
+		.about-text__subtitle {
+			@include font-graphil-3(14px, #2b4079, 400, 16px);
+			text-transform: uppercase;
+		}
+	}
+
+	.about-card__title--secondary {
+		margin-top: 50px;
+		margin-bottom: 105px;
+		@include font-graphil(24px, $color-primary, 700, 31px);
+	}
+
+	.card-sell__wrapper {
+		display: flex;
+		column-gap: 26px;
+
+		.card-sell {
+			position: relative;
+			@include flex(flex, false, column, center);
+			width: 300px;
+			height: 127px;
+			padding: 18px;
+			padding-bottom: 155px;
+			background: linear-gradient(180deg, rgba(3, 10, 29, 0) 0%, #030a1d 100%);
+			border-radius: 20px;
+
+			.card-sell__picture {
+				position: absolute;
+				bottom: 170px;
+			}
+
+			&__text {
+				@include font-graphil-2(18px, $color-primary, 600, 22px);
+				margin-top: 130px;
+			}
+
+			&__text--special {
+				@include font-graphil(14px, #2b4079, 400, 18px);
+				text-align: center;
+				margin-top: 15px;
+			}
+		}
+	}
+
+	.collection__title {
+		@include font-graphil(24px, $color-primary, 700, 31px);
+		margin-top: 44px;
+		margin-bottom: 44px;
+	}
+
+	.collection-card__wrapper {
+		display: flex;
+		column-gap: 27px;
+		.collection__card {
+			padding-left: 17px;
+			padding-top: 17px;
+			padding-right: 17px;
+			width: 280px;
+			height: 268px;
+			background: #081128;
+			border-radius: 10px;
+
+			.collection__picture {
+				position: relative;
+				display: flex;
+				column-gap: 4px;
+				margin-top: 4px;
+
+				.collection__picture--special {
+					position: absolute;
+					bottom: 30px;
+					left: 100px;
+				}
+			}
+
+			.collection__texts {
+				@include flex(flex, false, false, flex-end);
+				margin-top: 15px;
+				column-gap: 100px;
+
+				.collection__text {
+					// margin-top: 15px;
+					@include font-graphil-2(14px, $color-primary, 500, 17px);
+				}
+
+				.collection__text--primary {
+					@include font-graphil-2(14px, false, 600, 17px);
+					background: radial-gradient(
+							100% 100% at 100% 0%,
+							#0047ff 0%,
+							#3b4cee 38.33%,
+							#0788ff 63.02%,
+							#005aff 100%
+						),
+						#ffffff;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					background-clip: text;
+				}
+			}
+		}
+	}
+
+	.btn__wrapper--secondary {
+		@include flex(flex, center, false, false);
+		margin-top: 60px;
+		margin-bottom: 74px;
+		margin-left: 40px;
+		.btn__secondary {
+			@include flex(flex, center, false, center);
+			width: 300px;
+			height: 51px;
+			background: radial-gradient(
+					100% 100% at 100% 0%,
+					#0047ff 0%,
+					#3b4cee 38.33%,
+					#0788ff 63.02%,
+					#005aff 100%
+				),
+				#c4c4c4;
+			border-radius: 10px;
+			transition: 0.5s;
+			@include font-graphil(18px, $color-primary, 700, 23px);
+
+			&:hover {
+				transition: 0.5s;
+				cursor: pointer;
+				color: gray;
+			}
+		}
+	}
+}

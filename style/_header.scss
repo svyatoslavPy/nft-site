@@ -1,0 +1,142 @@
+@import 'mixin/mixin';
+$color-primary: white;
+
+.header {
+	overflow: hidden;
+	background: #010613;
+	.nav {
+		@include flex(flex, false, false, false); // flex для родителя нафигации
+		column-gap: 309px; // column-gap - 199 px для того чтобы раздвинуть navigation
+
+		&__logo {
+			display: flex; // flex для того чтобы ставли вряд дочерние элементы
+			column-gap: 9px; // column gap - 9px
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			.search-form {
+				position: relative;
+				top: 22px;
+				left: 50%;
+				width: 330px;
+				height: 40px;
+				border-radius: 20px;
+				box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+				transform: translate(-50%, -50%);
+				transition: all 0.3s ease;
+				border: 1px solid #18254a;
+			}
+
+			.search-input {
+				position: absolute;
+				top: 10px;
+				left: 43px;
+				font-size: 14px;
+				background: none;
+				color: #253f7d;
+				width: 505px;
+				height: 20px;
+				border: none;
+				appearance: none;
+				outline: none;
+
+				&::placeholder {
+					color: #121e3d;
+					@include font-graphil(
+						false,
+						#121e3d,
+						false,
+						false
+					); // инклюдю шрифты с мексинов для placeholder
+				}
+
+				&::-webkit-search-cancel-button {
+					appearance: none;
+				}
+			}
+
+			.search-button {
+				position: absolute;
+				top: 7px;
+				left: 10px;
+				height: 20px;
+				width: 20px;
+				padding: 0;
+				margin: 0;
+				border: none;
+				background: none;
+				outline: none;
+				cursor: pointer;
+
+				& svg {
+					width: 20px;
+					height: 20px;
+				}
+			}
+		}
+
+		.nav__links {
+			@include flex(flex, false, false, center);
+			@include font-graphil(12px, $color-primary, false, 16px);
+			column-gap: 42px;
+
+			@media (max-width: 1200px) {
+				opacity: 0;
+			}
+
+			.nav__text {
+				transition: 1s;
+
+				&::after {
+					content: '';
+					display: block;
+					width: 0%;
+					height: 2px;
+					background: radial-gradient(
+							100% 100% at 100% 0%,
+							#0047ff 0%,
+							#3b4cee 38.33%,
+							#0788ff 63.02%,
+							#005aff 100%
+						),
+						#c4c4c4;
+					opacity: 0;
+					transition: 2s;
+				}
+
+				&:hover {
+					cursor: pointer;
+					&::after {
+						width: 100%;
+						opacity: 1;
+					}
+				}
+			}
+
+			.btn {
+				@include flex(flex, center, false, center);
+				@include font-graphil(16px, false, 500, false);
+				width: 170px;
+				height: 39px;
+				background: radial-gradient(
+						100% 100% at 100% 0%,
+						#0047ff 0%,
+						#3b4cee 38.33%,
+						#0788ff 63.02%,
+						#005aff 100%
+					),
+					#c4c4c4;
+				border-radius: 10px;
+				transition: 2s;
+
+				&:hover {
+					transition: 2s;
+					color: rgb(191, 191, 191);
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
